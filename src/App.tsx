@@ -257,9 +257,9 @@ export default function App() {
         },
         "chat-messages": {
           enabled: false,
-          repeat: true,
+          repeat: false,
           "repeat-delay": 120,
-          messages: ["I am currently AFK."]
+          messages: []
         },
         "chat-log": true,
         "auto-reconnect": true,
