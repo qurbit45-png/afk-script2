@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function () {
+        try {
+          var rawFetch = window.fetch ? window.fetch.bind(window) : null;
+          var activeFetch = rawFetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function () {
+              return activeFetch;
+            },
+            set: function (fn) {
+              activeFetch = fn;
+            },
+            configurable: true,
+            enumerable: true,
+          });
+        } catch (err) {
+          try {
+            var proto =
+              Object.getPrototypeOf(window) ||
+              (typeof Window !== 'undefined' && Window.prototype);
+            if (proto) {
+              var rawProtoFetch = window.fetch
+                ? window.fetch.bind(window)
+                : null;
+              var activeProtoFetch = rawProtoFetch;
+              Object.defineProperty(proto, 'fetch', {
+                get: function () {
+                  return activeProtoFetch;
+                },
+                set: function (fn) {
+                  activeProtoFetch = fn;
+                },
+                configurable: true,
+                enumerable: true,
+              });
+            }
+          } catch (_) {}
+        }
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minecraft AFK Bot Hub &amp; Sequence Studio</title>
+    <meta name="description" content="Configure, test, and manage 24/7 Minecraft AFK bots with multi-step join sequences, anti-AFK routines, and instant code export." />
+    <meta property="og:title" content="Minecraft AFK Bot Hub &amp; Sequence Studio" />
+    <meta property="og:description" content="Configure, test, and manage 24/7 Minecraft AFK bots with multi-step join sequences, anti-AFK routines, and instant code export." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

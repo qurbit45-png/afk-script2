@@ -1,0 +1,107 @@
+{
+  "name": "AFK Bot",
+  "bot-account": {
+    "username": "DemonXTR",
+    "password": "Demonx32",
+    "type": "offline"
+  },
+  "server": {
+    "ip": "play.oderismc.fun",
+    "port": 19142,
+    "version": "",
+    "try-creative": false
+  },
+  "join-sequence": {
+    "enabled": true,
+    "description": "Executed in order upon every server join and reconnect",
+    "steps": [
+      {
+        "name": "Lobby Login",
+        "command": "/login Demonx32",
+        "delayMs": 1500
+      },
+      {
+        "name": "Switch to Lifesteal Realm",
+        "command": "/server lifesteal",
+        "delayMs": 5000
+      },
+      {
+        "name": "Warp to AFK Zone",
+        "command": "/warp afk",
+        "delayMs": 5000
+      }
+    ]
+  },
+  "position": {
+    "enabled": false,
+    "x": 0,
+    "y": 100,
+    "z": 0
+  },
+  "utils": {
+    "anti-afk": {
+      "enabled": false,
+      "sneak": false,
+      "arm-swing": false,
+      "hotbar-cycle": false,
+      "teabag": false
+    },
+    "chat-messages": {
+      "enabled": true,
+      "repeat": true,
+      "repeat-delay": 120,
+      "messages": [
+        "I'm a regular player",
+        "Subscribe to SoloPlayz!",
+        "Want Cheap Premium MC Server? https://discord.gg/VRMUnDkf95"
+      ]
+    },
+    "chat-log": true,
+    "auto-reconnect": true,
+    "auto-reconnect-delay": 3000,
+    "max-reconnect-delay": 30000
+  },
+  "movement": {
+    "enabled": false,
+    "circle-walk": {
+      "enabled": false,
+      "radius": 2,
+      "speed": 3500
+    },
+    "look-around": {
+      "enabled": false,
+      "interval": 5000
+    },
+    "random-jump": {
+      "enabled": false,
+      "interval": 12000
+    }
+  },
+  "modules": {
+    "avoidMobs": false,
+    "combat": false,
+    "beds": false,
+    "chat": true,
+    "console-commands": true
+  },
+  "combat": {
+    "attack-mobs": false,
+    "auto-eat": false
+  },
+  "beds": {
+    "pick-up-day": false,
+    "place-night": false
+  },
+  "discord": {
+    "enabled": false,
+    "webhookUrl": "",
+    "events": {
+      "connect": true,
+      "disconnect": true,
+      "chat": false
+    }
+  },
+  "chat": {
+    "respond": true
+  }
+}

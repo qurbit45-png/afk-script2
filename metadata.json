@@ -1,0 +1,6 @@
+{
+  "name": "Minecraft AFK Bot Hub & Sequence Studio",
+  "description": "Configure, test, and manage 24/7 Minecraft AFK bots with multi-step join sequences, anti-AFK routines, and instant code export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
